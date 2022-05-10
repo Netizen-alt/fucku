@@ -1,0 +1,18 @@
+body {
+    background-color: #2e2c2c;
+}
+p {
+    color: #ffff;
+    text-align: center;
+}
+
+.profile {
+    display: flex;
+	justify-content: center
+}
+
+.about-link {
+    display: flex;
+	justify-content: center;
+    align-items: center;
+}

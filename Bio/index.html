@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image"
+        href="https://cdn.discordapp.com/attachments/961587343343640596/973477890773622834/dh_024.png">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Morty Bio </title>
+</head>
+
+<script>
+    //Here you can add your own picture for snow. Just change the url
+    var snowsrc = "❅"
+    //how many snowflakes there will be (currently 12)
+    var no = 10;
+    //How fast will the snow disappear (0 is never)
+    var hidesnowtime = 0;
+    //The height the snow will reach before it disappears ("windowheight" or "pageheight")
+    var snowdistance = "pageheight";
+    ///////////////////////////////End of Settings///////////////////////////////////
+    var ie4up = (document.all) ? 1 : 0;
+    var ns6up = (document.getElementById && !document.all) ? 1 : 0;
+    function iecompattest() {
+        return (document.compatMode && document.compatMode != "BackCompat") ? document.documentElement : document.body
+    }
+    var dx, xp, yp;
+    var am, stx, sty;
+    var i, doc_width = 800, doc_height = 600;
+    if (ns6up) {
+        doc_width = self.innerWidth;
+        doc_height = self.innerHeight;
+    }
+    else
+        if (ie4up) {
+            doc_width = document.body.clientWidth;
+            doc_height = document.body.clientHeight;
+        }
+    dx = new Array();
+    xp = new Array();
+    yp = new Array();
+    am = new Array();
+    stx = new Array();
+    sty = new Array();
+    for (i = 0; i < no; ++i) {
+        dx[i] = 0;
+        xp[i] = Math.random() * (doc_width - 50);
+        yp[i] = Math.random() * doc_height;
+        am[i] = Math.random() * 20;
+        stx[i] = 0.02 + Math.random() / 10;
+        sty[i] = 0.7 + Math.random();
+        if (ie4up || ns6up) {
+            if (i == 0) {
+                document.write("<div id=\"dot" + i + "\" style=\"POSITION: absolute; Z-INDEX: " + i + "; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><div style='color:#fff;'>❅</div><\/div>");
+            }
+            else {
+                document.write("<div id=\"dot" + i + "\" style=\"POSITION: absolute; Z-INDEX: " + i + "; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><div style='color:#fff;'>❅</div><\/div>");
+            }
+        }
+    }
+    function snowIE_NS6() {
+        doc_width = ns6up ? window.innerWidth - 10 : iecompattest().clientWidth - 10;
+        doc_height = (window.innerHeight && snowdistance == "windowheight") ? window.innerHeight : (ie4up && snowdistance == "windowheight") ? iecompattest().clientHeight : (ie4up && !window.opera && snowdistance == "pageheight") ? iecompattest().scrollHeight : iecompattest().offsetHeight;
+        for (i = 0; i < no; ++i) {
+            yp[i] += sty[i];
+            if (yp[i] > doc_height - 50) {
+                xp[i] = Math.random() * (doc_width - am[i] - 30);
+                yp[i] = 0;
+                stx[i] = 0.02 + Math.random() / 10;
+                sty[i] = 0.7 + Math.random();
+            }
+            dx[i] += stx[i];
+            document.getElementById("dot" + i).style.top = yp[i] + "px";
+            document.getElementById("dot" + i).style.left = xp[i] + am[i] * Math.sin(dx[i]) + "px";
+        }
+        snowtimer = setTimeout("snowIE_NS6()", 10);
+    }
+    function hidesnow() {
+        if (window.snowtimer) clearTimeout(snowtimer)
+        for (i = 0; i < no; i++) document.getElementById("dot" + i).style.visibility = "hidden"
+    }
+
+    if (ie4up || ns6up) {
+        snowIE_NS6();
+        if (hidesnowtime > 0)
+            setTimeout("hidesnow()", hidesnowtime * 1000)
+    }
+    console.log('BY : Pluem')
+    console.log('Facebook : Patiphan Srieamkul')
+</script>
+
+<body>
+    <div class="profile">
+        <img src="https://cdn.discordapp.com/attachments/961587343343640596/973453467911847956/23.png" width="20%"
+        height="20%">
+    </div>
+    
+    <p>
+        Thanaphat 15y.
+    </p>
+    <p>
+        This is a website I practiced building, it may not be very pretty.
+    </p>
+    <p>
+        ช่องทางการติดต่อ
+    </p>
+    
+    <div class="about-link ">
+        <img src="https://cdn.discordapp.com/attachments/961587343343640596/973438385010126928/f61ea62ebab4395d79c9991120cafb63-removebg-preview.png"width="4%" height="4%"> 
+        <a href="https://www.facebook.com/profile.php?id=100078077389795">Facebook</a>
+        <img src="https://cdn.discordapp.com/attachments/961587343343640596/973440066909270056/a1abc562602b16e9d11e856913ffd989-removebg-preview.png"
+        width="4%" height="4%"><a href="https://line.me/ti/p/VkJ_0sgTvK"> Line</a>
+        <img src="https://cdn.discordapp.com/attachments/961587343343640596/973441521976246342/0d2dc2d6c6374498c9543135ed8cff30-removebg-preview.png"
+        width="4%" height="4%"><a href="https://www.instagram.com/thanaphat_j_07/"> Instagram </a>
+        <img src="https://cdn.discordapp.com/attachments/961587343343640596/973443980618506280/88c07b3c1d8a43338473f85e38c33b7a.gif"
+        width="4%" height="4%"><a href="https://discord.gg/7qmC5BrvxV">Discord</a>
+        <img src="https://cdn.discordapp.com/attachments/961587343343640596/973449040417128449/920974761184595990.png"
+            width="4%" height="4%">123-8-74312-1 <button type="button" class="btn btn-default">คัดลอก</button>
+        <img src="https://cdn.discordapp.com/attachments/961587343343640596/973448729245917184/920974774052732928.png"
+            width="4%" height="4%">0890815379 <button type="button" class="btn btn-default">คัดลอก</button>
+    </div>
+</body>
+
+</html>
