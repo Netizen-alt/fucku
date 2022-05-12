@@ -8,12 +8,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title> Morty Bio </title>
 </head>
 
 <script>
     //Here you can add your own picture for snow. Just change the url
-    var snowsrc = "❅"
+    var snowsrc = "⚽"
     //how many snowflakes there will be (currently 12)
     var no = 10;
     //How fast will the snow disappear (0 is never)
@@ -53,10 +54,10 @@
         sty[i] = 0.7 + Math.random();
         if (ie4up || ns6up) {
             if (i == 0) {
-                document.write("<div id=\"dot" + i + "\" style=\"POSITION: absolute; Z-INDEX: " + i + "; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><div style='color:#fff;'>❅</div><\/div>");
+                document.write("<div id=\"dot" + i + "\" style=\"POSITION: absolute; Z-INDEX: " + i + "; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><div style='color:#fff;'>⚽</div><\/div>");
             }
             else {
-                document.write("<div id=\"dot" + i + "\" style=\"POSITION: absolute; Z-INDEX: " + i + "; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><div style='color:#fff;'>❅</div><\/div>");
+                document.write("<div id=\"dot" + i + "\" style=\"POSITION: absolute; Z-INDEX: " + i + "; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><div style='color:#fff;'>⚽</div><\/div>");
             }
         }
     }
@@ -87,16 +88,17 @@
         if (hidesnowtime > 0)
             setTimeout("hidesnow()", hidesnowtime * 1000)
     }
-    console.log('BY : Pluem')
-    console.log('Facebook : Patiphan Srieamkul')
+    //text to hex
+    console.log('4b5559524149')
+    console.log('4b55594b55594b55594b55594b55594b55594b55594b55594b55594b55594b55594b55594b55594b55594b55594b55594b55594b55594b55594b55594b5559')
 </script>
 
-<body>
+<body class="text-tt">
     <div class="profile">
         <img src="https://cdn.discordapp.com/attachments/961587343343640596/973453467911847956/23.png" width="20%"
-        height="20%">
+            height="20%">
     </div>
-    
+
     <p>
         Thanaphat 15y.
     </p>
@@ -106,8 +108,22 @@
     <p>
         ช่องทางการติดต่อ
     </p>
-    
+
+
     <div class="about-link ">
+        <!-- <img src="https://cdn.discordapp.com/attachments/961587343343640596/973438385010126928/f61ea62ebab4395d79c9991120cafb63-removebg-preview.png"
+            width="4%" height="4%"> -->
+
+        <a href="https://www.facebook.com/profile.php?id=100078077389795" class="btn text-tt">
+            <i class="fab fa-facebook-square"> Facebook</i>
+        </a>
+    </div>
+
+    <footer class="footer-tt">
+        <a href="https://www.facebook.com/profile.php?id=100078077389795"><p> © Thanaphat 2022 - 2055</p></a>
+    </footer>
+
+    <!-- <div class="about-link">
         <img src="https://cdn.discordapp.com/attachments/961587343343640596/973438385010126928/f61ea62ebab4395d79c9991120cafb63-removebg-preview.png"width="4%" height="4%"> 
         <a href="https://www.facebook.com/profile.php?id=100078077389795">Facebook</a>
         <img src="https://cdn.discordapp.com/attachments/961587343343640596/973440066909270056/a1abc562602b16e9d11e856913ffd989-removebg-preview.png"
@@ -120,7 +136,9 @@
             width="4%" height="4%">123-456-7899 <button type="button" class="btn btn-default">คัดลอก</button>
         <img src="https://cdn.discordapp.com/attachments/961587343343640596/973448729245917184/920974774052732928.png"
             width="4%" height="4%">0873313999 <button type="button" class="btn btn-default">คัดลอก</button>
-    </div>
+    </div> -->
+
+
 </body>
 
 </html>
